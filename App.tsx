@@ -1,17 +1,24 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View,  } from 'react-native';
 
 
 export default function App() {
   const age  = 18;
+  let licenseyears = 0;
   let feedback = '';
-
-  if (age >= 18) {
+  if (age >= 18)
+    if (licenseyears >= 3)
+    {
+      feedback ='You are qaulified, safe driver.'
+    }
+    else
+    {
     feedback = 'You are allowed to drive, YAY!'
-  } else 
-  {
+    } else 
+    {
     feedback = 'You are not allowed to drive yet.'
-  }
+    }
+
 
   return (
     <View style={styles.container}>
@@ -27,12 +34,14 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: 'slategrey',
     alignItems: 'center',
     justifyContent: 'center',
+    
   },
 
   response: {
     fontSize: 28,
+    color:'blue',
   },
 });
